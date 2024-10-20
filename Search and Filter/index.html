@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter And Search</title>
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Wrapper for banner image and text */
+        .banner-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        /* Banner Image */
+        #banner-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1em; /* Add space below the image */
+            max-width: 100%; /* Prevent overflow */
+        }
+        /* Dark Overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the second parameter for darkness */
+        }
+        /* Overlay Text */
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: wheat; /* Text color */
+            font-size: 8em; /* Font size */
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+        }
+        /* Additional styles for filter section */
+        .filter-section {
+            margin: 1em 0;
+            padding: 1em 0;
+            display: none; /* Hide initially */
+            border: 1px solid #6759ff;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .filter-group {
+            margin-bottom: 10px;
+        }
+        .filter-group label {
+            margin-right: 10px;
+        }
+        .filter-group select {
+            padding: 0.5em;
+            font-size: 1em;
+        }
+        #filter-button {
+            background-color: #6759ff;
+            color: #ffffff;
+            border: none;
+            padding: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 1em; /* Margin to separate from the search button */
+        }
+        #search-container {
+            display: flex; /* Align search and filter buttons horizontally */
+            align-items: center; /* Center items vertically */
+        }
+        #search-container input {
+            background-color: transparent;
+            width: 60%; /* Adjust width as needed */
+            border-bottom: 2px solid #110f29;
+            padding: 1em 0.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Large Image with Overlay Text -->
+        <div class="banner-container">
+            <img id="banner-image" src="banner.png" alt="Banner Image" />
+            <div class="overlay"></div> <!-- Dark overlay -->
+            <div class="banner-text">Search How you Can Save Earth</div>
+        </div>
+
+        <div id="search-container">
+            <input type="search" id="search-input" placeholder="Search here.." />
+            <button id="search">Search</button>
+            <!-- Filter Button -->
+            <button id="filter-button" onclick="toggleFilter()">Show Filters</button>
+        </div>
+        
+        <!-- Dropdown Filters -->
+        <div class="filter-section" id="filter-section">
+            <h2>Filters</h2>
+            <!-- Location Filter -->
+            <div class="filter-group">
+                <label for="location">Location:</label>
+                <select id="location" class="filter" onchange="applyFilters()">
+                    <option value="all">All Locations</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Nashik">Nashik</option>
+                </select>
+            </div>
+            
+            <!-- Type of Activity Filter -->
+            <div class="filter-group">
+                <label for="activity-type">Type of Activity:</label>
+                <select id="activity-type" class="filter" onchange="applyFilters()">
+                    <option value="all">All Types</option>
+                    <option value="Drive">Drive</option>
+                    <option value="Collection">Collection</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="buttons">
+            <button class="button-value" onclick="filterProduct('all')">All</button>
+            <button class="button-value" onclick="filterProduct('Mumbai')">Mumbai</button>
+            <button class="button-value" onclick="filterProduct('Pune')">Pune</button>
+            <button class="button-value" onclick="filterProduct('Nashik')">Nashik</button>
+        </div>
+        
+        <div id="products"></div>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
