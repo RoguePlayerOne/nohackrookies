@@ -1,0 +1,217 @@
+.dashboard * {
+  font-size: 62.5%; /* Corrected syntax for font-size */
+  box-sizing: border-box;
+  margin-left: 80px;
+}
+
+.dashboard body {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard main {
+  width: 80rem;
+  height: 43rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.dashboard #header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 2rem;
+}
+
+.dashboard .share {
+  width: 4.5rem;
+  height: 3rem;
+  background-color: #f55e77;
+  border: 0;
+  border-bottom: 0.2rem solid #c0506a;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.dashboard .share:active {
+  border-bottom: 0;
+}
+
+.dashboard .share i {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.dashboard h1 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.7rem;
+  color: #141a39;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.dashboard #leaderboard {
+  width: 100%;
+  position: relative;
+}
+
+.dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #141a39;
+  cursor: default;
+}
+
+.dashboard tr {
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.2rem;
+}
+
+.dashboard tr:not(:first-child):hover {
+  background-color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px 8px #e4e7fb;
+}
+
+.dashboard tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.dashboard tr:nth-child(1) {
+  color: #fff;
+}
+
+.dashboard td {
+  height: 5rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.dashboard .number {
+  width: 1rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.dashboard .name {
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.dashboard .points {
+  font-weight: bold;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dashboard .points:first-child {
+  width: 10rem;
+}
+
+.dashboard .gold-medal {
+  height: 3rem;
+  margin-left: 1.5rem;
+}
+
+.dashboard .ribbon {
+  width: 42rem;
+  height: 5.5rem;
+  top: -0.5rem;
+  background-color: #5c5be5;
+  position: absolute;
+  left: -1rem;
+  box-shadow: 0px 15px 11px -6px #7a7a7d;
+}
+
+.dashboard .ribbon::before,
+.dashboard .ribbon::after {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.8rem;
+  background-color: #5c5be5;
+  position: absolute;
+  z-index: -1;
+}
+
+.dashboard .ribbon::before {
+  left: 0.35rem;
+  transform: rotate(45deg);
+}
+
+.dashboard .ribbon::after {
+  right: 0.35rem;
+  transform: rotate(45deg);
+}
+
+.dashboard #buttons {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.dashboard .exit,
+.dashboard .continue {
+  width: 11rem;
+  height: 3rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.dashboard .exit {
+  color: #7e7f86;
+  border: 0;
+  background-color: #fff;
+  border-radius: 2rem;
+}
+
+.dashboard .exit:hover {
+  border: 0.1rem solid #5c5be5;
+}
+
+.dashboard .continue {
+  color: #fff;
+  background-color: #5c5be5;
+  border: 0;
+  border-bottom: 0.2rem solid #3838b8;
+  border-radius: 2rem;
+}
+
+.dashboard .continue:active {
+  border-bottom: 0;
+}
+
+@media (max-width: 740px) {
+  .dashboard * {
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard * {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 390px) {
+  .dashboard * {
+    font-size: 45%;
+  }
+}
